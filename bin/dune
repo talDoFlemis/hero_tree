@@ -1,0 +1,4 @@
+(executable
+ (public_name hero_tree)
+ (name main)
+ (libraries hero_tree))
