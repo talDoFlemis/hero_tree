@@ -1,6 +1,6 @@
-type 'a basic_coord_tree =
+type basic_coord_tree =
   | Leaf
-  | Node of 'a * float * float * 'a basic_coord_tree * 'a basic_coord_tree
+  | Node of int * float * float * basic_coord_tree *  basic_coord_tree
 [@@deriving show { with_path = false }, sexp]
 
 let scale = 30.0
@@ -40,10 +40,12 @@ let convert_to_basic tree =
   let tree, _, _ = calculate_coords tree 0.0 0.0 in
   tree
 
-let rec inorder_print (tree: int basic_coord_tree) =
+let rec inorder_print tree =
   match tree with
   | Leaf -> ()
   | Node (value, x, y, left, right) ->
       inorder_print left;
       print_endline (Printf.sprintf "value: %i x:%f y:%f" value x y);
       inorder_print right
+
+let print_tree = show_basic_coord_tree

@@ -7,6 +7,6 @@ let example_tree = insert 1 example_tree
 let example_tree = insert 2 example_tree
 let example_tree = insert 4 example_tree
 let example_tree = insert 5 example_tree
-
 let basic_tree = Basic.convert_to_basic example_tree
 let () = Basic.inorder_print basic_tree
+let () = print_endline (Basic.print_tree basic_tree)
