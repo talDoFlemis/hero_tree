@@ -11,6 +11,7 @@ doc: "https://url/to/documentation"
 bug-reports: "https://github.com/username/reponame/issues"
 depends: [
   "ocaml"
+  "fmt"
   "dune" {>= "3.10"}
   "ppx_deriving"
   "ppx_expect"
